@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const os = require('os');
 const app = express();
 const port = 3000;
@@ -17,6 +18,7 @@ function getServerIP() {
 }
 
 const serverIP = getServerIP();
+app.use(cors());
 
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
